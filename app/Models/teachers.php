@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class teachers extends Model
 {
-    use HasFactory;
+    public function teachers(){
+        return $this->belongsToMany(\courses::class);
+    }
 }
