@@ -4,18 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Course;
+use App\Models\Teacher;
 
-class areas extends Model
+class Area extends Model
 {
     use HasFactory;
 
     public function courses()
     {
-        return $this->hasMany('App\Models\courses');
+        return $this->hasMany(Course::class);
     }
 
     public function teachers()
     {
-        return $this->hasMany('App\Models\teachers');
+        return $this->hasMany(Teacher::class);
     }
 }
