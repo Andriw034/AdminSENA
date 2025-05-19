@@ -1,18 +1,24 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\OrmController;
 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
+| Aquí se definen las rutas para el controlador ORM que devuelven datos JSON.
 |
 */
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+// Rutas para obtener datos de las tablas usando OrmController
+Route::get('/areas', [OrmController::class, 'getAreas']);
+Route::get('/teachers', [OrmController::class, 'getTeachers']);
+Route::get('/computers', [OrmController::class, 'getComputers']);
+Route::get('/courses', [OrmController::class, 'getCourses']);
+Route::get('/apprentices', [OrmController::class, 'getApprentices']);

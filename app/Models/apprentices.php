@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class apprentices extends Model
 {
-    public function apprentices(){
-    return $this->belongsTo(computers::class);
-}
+    use HasFactory;
+
+    public function course()
+    {
+        return $this->belongsTo('App\Models\courses');
+    }
 }

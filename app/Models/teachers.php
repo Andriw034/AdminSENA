@@ -7,7 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class teachers extends Model
 {
-    public function teachers(){
-        return $this->belongsToMany(\courses::class);
+    use HasFactory;
+    
+    public function courses()
+    {
+        return $this->belongsToMany('App\Models\courses');
+    }
+    
+    public function area()
+    {
+        return $this->belongsTo('App\Models\areas');
+    }
+    
+    public function trainingCenter()
+    {
+        return $this->belongsTo('App\Models\trainingCenter');
     }
 }

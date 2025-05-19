@@ -9,7 +9,11 @@ class courses extends Model
 {
     use HasFactory;
 
-    public function courses(){
-        return $this->hasMany(coursesMc::class);
+    public function apprentices(){
+        return $this->hasMany('App\Models\apprentices');
+    }
+    
+    public function trainingCenter(){
+        return $this->belongsTo('App\Models\trainingCenter');
     }
 }
