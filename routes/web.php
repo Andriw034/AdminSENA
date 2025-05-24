@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\OrmController;
+use App\Http\Controllers\ComputersController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,3 +23,6 @@ Route::get('/teachers', [OrmController::class, 'getTeachers']);
 Route::get('/computers', [OrmController::class, 'getComputers']);
 Route::get('/courses', [OrmController::class, 'getCourses']);
 Route::get('/apprentices', [OrmController::class, 'getApprentices']);
+
+// Rutas CRUD para Computers
+Route::resource('computers', ComputersController::class);
